@@ -31,9 +31,9 @@ When using the self-contained releases you don't need to install the .NET (Core)
 
 ## Prerequisites
 
-When you are NOT using the self-contained releases, you need to install the latest/current Runtime version of .NET 9:
+When you are NOT using the self-contained releases, you need to install the latest/current Runtime version of .NET 10:
 
-https://dotnet.microsoft.com/download/dotnet/9.0/runtime
+https://dotnet.microsoft.com/download/dotnet/10.0/runtime
 
 ## Usage
 
@@ -201,11 +201,11 @@ It will save the URLs files onto C:\\Scans (windows), or replace with a custom f
 
 ## Building
 
-1.  Install the newest .NET 9 SDK: https://dotnet.microsoft.com/download/dotnet/9.0
+1.  Install the newest .NET 10 SDK: https://dotnet.microsoft.com/download/dotnet/10.0
 2.  `git clone https://github.com/KoalaBear84/OpenDirectoryDownloader`
 3.  `cd OpenDirectoryDownloader/src`
 4.  `dotnet build .`
-5.  `cd OpenDirectoryDownloader/bin/Debug/net9.0`
+5.  `cd OpenDirectoryDownloader/bin/Debug/net10.0`
 6.  `./OpenDirectoryDownloader --url "https://myopendirectory.com"`
 
 For Linux (Might not be needed since .NET 7):  
