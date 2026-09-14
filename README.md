@@ -261,6 +261,25 @@ This will 'abuse' a 'Quickstart' project.
 
 On the first use, you will get a browser screen that you need to grant access for it, and because we haven't granted out OAuth consent screen (This app isn't verified), we get an extra warning. You can use the "Advanced" link, and use the "Go to yourappname (unsafe)" link.
 
+### Headless / server usage
+
+If you run OpenDirectoryDownloader on a server with no browser available, it can't open a browser automatically for the first-time authorization. Instead of crashing, it will print the authorization URL and wait for you to complete it manually:
+
+```
+Could not open a browser automatically (this looks like a headless environment).
+Open this URL manually in any browser to authorize Google Drive access:
+
+    https://accounts.google.com/o/oauth2/v2/auth?...
+
+If this is a remote/headless server, forward the port first, e.g.:
+    ssh -L 51823:localhost:51823 <user>@<server>
+then open the URL above on your local machine.
+
+Waiting for authorization...
+```
+
+Forward the port shown in the printed URL's `redirect_uri` over SSH (`ssh -L <port>:localhost:<port> <user>@<server>`), then open the URL in a browser on your own machine. Once you grant access, the callback is tunneled back to the server and `token.json` is created there, same as a normal authorization.
+
 ## Support
 
 If you like OpenDirectoryDownloader, please consider supporting me!

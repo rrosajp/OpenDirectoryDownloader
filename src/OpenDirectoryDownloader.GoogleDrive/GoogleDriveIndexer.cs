@@ -40,7 +40,8 @@ public class GoogleDriveIndexer
 				Scopes,
 				"user",
 				CancellationToken.None,
-				new FileDataStore(credPath, true)).Result;
+				new FileDataStore(credPath, true),
+				new HeadlessLocalServerCodeReceiver()).Result;
 
 			Console.WriteLine($"Credential file saved to: {credPath}");
 
