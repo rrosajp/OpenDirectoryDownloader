@@ -9,6 +9,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Platforms>AnyCPU;x64</Platforms>
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <!-- The self-contained release builds are published with PublishTrimmed=true, which by default
+         disables reflection-based System.Text.Json serialization. Several JSON models (Dufs, AList,
+         PCloud, HFS, file upload parsers) rely on reflection-based (de)serialization, so force it
+         back on rather than converting every model to source generators. -->
+    <JsonSerializerIsReflectionEnabledByDefault>true</JsonSerializerIsReflectionEnabledByDefault>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
